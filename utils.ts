@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path  from 'path';
 
 export function dateFromSlackTs(str: string) {
-    return new Date(str.split('.')[0] + '000');
+    return new Date(+(str.split('.')[0] + '000'));
 }
 
 export function loadJsonSync(...pathParts: string[]) {

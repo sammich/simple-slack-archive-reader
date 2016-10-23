@@ -1,3 +1,5 @@
+/// <reference path="typings/index.d.ts" />
+
 import * as fs from 'fs';
 import * as path  from 'path';
 
@@ -41,10 +43,6 @@ class Channel {
                 this.messages.push(new Message(rawMessages));
             });
         });
-
-        console.log(`#${this.name} has ${this.messages.length} messages`);
-
-
     }
 }
 

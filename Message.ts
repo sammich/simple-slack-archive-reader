@@ -26,6 +26,7 @@ class Message {
         if (rawData.subtype) return;
 
         this.user = Users.get(rawData.user);
+
         this.type = rawData.type;
         this.subtype = rawData.subtype;
         this.when = utils.dateFromSlackTs(rawData.ts);

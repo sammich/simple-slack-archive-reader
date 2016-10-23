@@ -4,8 +4,8 @@ interface RawJSONUserData {
 }
 
 class User {
-    id: String;
-    name: String;
+    id: string;
+    name: string;
     constructor(rawData: RawJSONUserData) {
         this.id = rawData.id;
         this.name = rawData.name;
