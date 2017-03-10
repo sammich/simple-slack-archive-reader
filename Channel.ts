@@ -1,5 +1,3 @@
-/// <reference path="typings/index.d.ts" />
-
 import * as fs from 'fs';
 import * as path  from 'path';
 
@@ -38,9 +36,9 @@ class Channel {
         const folderPath = path.join(dataDir, this.name);
         const messageJsonFiles = fs.readdirSync(folderPath);
 
-        messageJsonFiles.map((filename) => {
-            utils.loadJsonSync(folderPath, filename).map((rawMessages) => {
-                this.messages.push(new Message(rawMessages));
+        messageJsonFiles.map(filename => {
+            utils.loadJsonSync(folderPath, filename).map(rawMessages => {
+                this.messages.push(new Message(rawMessages, this));
             });
         });
     }

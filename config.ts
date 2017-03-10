@@ -1,1 +1,1 @@
-export const dataDir = './data';
+export const dataDir = '../data';

@@ -10,6 +10,11 @@ class Users {
         this.users = utils.loadJsonSync(dataDir, 'users.json').map((rawUser) => {
             return new User(rawUser);
         });
+
+        this.users.push(new User({
+            id: 'USLACKBOT',
+            name: 'Slackbot'
+        }));
     }
 
     get(id: String) {

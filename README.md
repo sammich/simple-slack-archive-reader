@@ -5,8 +5,8 @@ Words.
     npm install -g typings typescript
     npm install
     
-sammich apologises that he doesn't know how to make this app run without using WebStorm.
+Compile some typescript using `tsc -p .`.
 
-Figure it out yourself.
+Run from `./tmp` as `node main.js`
 
 Dump the contents of a Slack archive into `./data`.
