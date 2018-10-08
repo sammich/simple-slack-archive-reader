@@ -1,5 +1,4 @@
 *.map
-*.js
 src/reports/*.txt
 typings/
 node_modules/
