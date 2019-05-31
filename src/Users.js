@@ -5,7 +5,7 @@ const { dataDir } = require('./config'),
 
 class Users {
     constructor() {
-        this.users = utils.loadJsonSync(dataDir, 'users.json').map((rawUser) => {
+        this.users = utils.loadJsonSync(dataDir, 'users.json').map(rawUser => {
             return new User(rawUser);
         });
 

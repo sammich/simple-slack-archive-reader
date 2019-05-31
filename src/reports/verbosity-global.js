@@ -8,7 +8,7 @@ module.exports = function run() {
 
     Channels.channels.map((ch) => {
         ch.messages.map((m) => {
-            if (!m.user) return;
+            if (!m.user || m.user.isBot) return;
 
             if (!users[m.user.name]) {
                 users[m.user.name] = {

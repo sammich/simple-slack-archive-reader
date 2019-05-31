@@ -9,7 +9,7 @@ module.exports = function run() {
 
     Channels.channels.map((ch) => {
         ch.messages.map((m) => {
-            if (!m.user) return;
+            if (!m.user || m.user.isBot) return;
 
             if (!users[m.user.name]) {
                 users[m.user.name] = {
@@ -50,7 +50,7 @@ module.exports = function run() {
 
     for (let i = 0; i < 24*4; i++) {
         const hr = `${Math.floor(i / 4)}:${(i % 4)*15}`;
-        
+
         ln = `${padify(hr, 5, true)}`;
         _.forEach(users, (stat, user) => {
             ln += `${padify((stat.hour[i*15] || 0), 12, true)}`;
