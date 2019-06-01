@@ -7,11 +7,6 @@ module.exports = function run() {
 
     let output = [];
 
-    /*
-    count all the words people use
-
-     */
-
     Channels.channels.map((ch) => {
         ch.messages.map((m) => {
             if (!m.user || m.user.isBot) return;
@@ -21,18 +16,14 @@ module.exports = function run() {
             }
 
             m.text.split(/\s/g).map(word => {
-                if (!isWord(word)) {
-                    return
-                }
+                if (!isWord(word) || !isLol(word)) return
 
-                word = cleanWord(word);
+                word = cleanWord(word)
 
-                if (word.length < 3) return
-
-                const dict = users[m.user.name];
+                const dict = users[m.user.name]
 
                 if (!dict.has(word)) {
-                    dict.set(word, 0);
+                    dict.set(word, 0)
                 }
 
                 dict.set(word, dict.get(word) + 1)
@@ -41,7 +32,7 @@ module.exports = function run() {
     });
 
     _.forEach(users, (stat, user) => {
-        output = [`@${user} has used ${stat.size} different words (three letters or more). Here are the words:`];
+        output = [`@${user} uses these words to express funny:`];
 
         let dict = Array.from(stat).filter(wordCount => {
             return wordCount[1] > 1
@@ -53,8 +44,14 @@ module.exports = function run() {
 
         output.push(dict.join('\n'));
 
-        writeText(`lexicon-${user}`, output)
+        writeText(`lol-${user}`, output)
     });
+}
+
+function isLol(word) {
+    return word.includes('hah')
+        || word.includes('lol')
+        || word.includes('heh')
 }
 
 function isWord(word) {

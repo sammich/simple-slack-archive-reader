@@ -7,7 +7,8 @@ module.exports = {
     dateFromSlackTs,
     loadJsonSync,
     download,
-    writeText
+    writeText,
+    padify
 }
 
 function dateFromSlackTs(str) {
@@ -39,4 +40,16 @@ function download(uri, filename, callback) {
 
 function writeText(name, text) {
     fs.writeFileSync(path.join(reportDir, `/${name}.txt`), Array.isArray(text) ? text.join('\n') : text)
+}
+
+function padify(text, len, left, char = ' ') {
+    text = String(text)
+
+    const padder = char.repeat(len - text.length)
+
+    if (left) {
+        return padder + text
+    }
+
+    return text + padder
 }

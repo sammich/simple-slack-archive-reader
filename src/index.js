@@ -7,6 +7,8 @@ require('./reports/lexicon')()
 require('./reports/message-count')()
 require('./reports/message-growth')()
 require('./reports/time-of-day')()
+require('./reports/lol')()
+require('./reports/mojis')()
 require('./reports/verbosity-global')()
 
 //require('./reports/search')()
