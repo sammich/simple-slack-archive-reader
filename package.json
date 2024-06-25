@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/sammich/simple-slack-archive-reader.git",
-  "author": "Samuel Chan <samuel.chan@btpplus.com>",
+  "author": "sammich",
   "license": "MIT",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "async": "~2.6",
-    "lodash": "~4.17",
-    "moment": "~2.21",
-    "progress": "~1.1.8",
-    "request": "~2.85"
+    "async": "~3",
+    "lodash": "~4",
+    "moment": "~2",
+    "progress": "~2",
+    "request": "~2"
   }
 }

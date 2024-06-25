@@ -19,8 +19,6 @@ module.exports = function run() {
 
             if (!mojis) return
 
-            console.log(mojis);
-
             mojis.forEach(moji => {
                 const dict = users[m.user.name]
 

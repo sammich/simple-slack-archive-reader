@@ -2,3 +2,5 @@
 src/reports/*.txt
 typings/
 node_modules/
+/.idea
+.DS_Store

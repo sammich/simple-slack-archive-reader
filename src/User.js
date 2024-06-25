@@ -1,14 +1,15 @@
-const bots = new Set()
-bots.add('citationneededbot')
-bots.add('github')
-bots.add('Slackbot')
-bots.add('charlotte')
+const ignore = new Set()
+ignore.add('citationneededbot')
+ignore.add('github')
+ignore.add('Slackbot')
+ignore.add('charlotte')
+ignore.add('simplepoll')
 
 class User {
     constructor(rawData) {
         this.id = rawData.id;
         this.name = rawData.name;
-        this.isBot = bots.has(rawData.name)
+        this.isBot = ignore.has(rawData.name)
     }
 }
 

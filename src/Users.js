@@ -1,6 +1,5 @@
 const { dataDir } = require('./config'),
     utils = require('./utils'),
-
     User = require('./User')
 
 class Users {

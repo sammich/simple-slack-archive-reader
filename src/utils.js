@@ -12,6 +12,8 @@ module.exports = {
 }
 
 function dateFromSlackTs(str) {
+    str = String(str)
+
     return new Date(+(str.split('.')[0] + '000'));
 }
 
@@ -44,6 +46,10 @@ function writeText(name, text) {
 
 function padify(text, len, left, char = ' ') {
     text = String(text)
+
+    if (len - text.length <= 0) {
+        return text
+    }
 
     const padder = char.repeat(len - text.length)
 
